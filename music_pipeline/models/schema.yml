@@ -1,0 +1,63 @@
+version: 2
+
+models:
+  - name: stg_local
+    description: "Silver layer for local tracks from spreadsheet and music folder"
+    columns:
+      - name: title
+        description: "Song title from spreadsheet"
+        tests:
+          - not_null
+      - name: source
+        description: "Source of the data"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['spreadsheet']
+
+  - name: stg_spotify
+    description: "Silver layer for Spotify track metadata"
+    columns:
+      - name: spotify_id
+        description: "Unique Spotify track ID"
+        tests:
+          - not_null
+          - unique
+      - name: title
+        description: "Song title from Spotify"
+        tests:
+          - not_null
+      - name: duration_seconds
+        description: "Duration converted from milliseconds"
+        tests:
+          - not_null
+
+  - name: stg_youtube
+    description: "Silver layer for YouTube video metadata"
+    columns:
+      - name: youtube_video_id
+        description: "Unique YouTube video ID"
+        tests:
+          - not_null
+          - unique
+      - name: title
+        description: "Video title from YouTube"
+        tests:
+          - not_null
+
+  - name: fct_songs
+    description: "Gold layer — final unified songs table"
+    columns:
+      - name: song_id
+        description: "Unique song identifier"
+        tests:
+          - not_null
+          - unique
+      - name: title
+        description: "Clean song title"
+        tests:
+          - not_null
+      - name: artist
+        description: "Artist name"
+        tests:
+          - not_null

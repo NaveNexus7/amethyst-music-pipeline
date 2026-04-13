@@ -1,0 +1,36 @@
+[0m11:48:18.769128 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B730AD3CB0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B72E980690>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B731D5BC50>]}
+
+
+============================== 11:48:18.774111 | 3e0fd7bd-54f0-4c3b-8abe-53945b5d2021 ==============================
+[0m11:48:18.774111 [info ] [MainThread]: Running with dbt=1.11.8
+[0m11:48:18.774939 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\evaas\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'use_colors': 'True', 'indirect_selection': 'eager', 'invocation_command': 'dbt init music_pipeline', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m11:48:18.792201 [info ] [MainThread]: Creating dbt configuration folder at C:\Users\evaas\.dbt
+[0m11:48:18.795143 [debug] [MainThread]: Starter project path: C:\Users\evaas\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt\include\starter_project
+[0m11:48:18.832482 [info ] [MainThread]: 
+Your new dbt project "music_pipeline" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m11:48:18.833229 [info ] [MainThread]: Setting up your profile.
+[0m11:52:15.033278 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D29F9C3CB0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D29D860690>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D2A0C47C50>]}
+
+
+============================== 11:52:15.038022 | 1c4ee23c-28c6-4463-a4cb-d8d3b91ac0e5 ==============================
+[0m11:52:15.038022 [info ] [MainThread]: Running with dbt=1.11.8
+[0m11:52:15.038634 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\evaas\\.dbt', 'use_colors': 'True', 'indirect_selection': 'eager', 'invocation_command': 'dbt init music_pipeline', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m11:52:15.055928 [info ] [MainThread]: A project called music_pipeline already exists here.
+[0m11:52:15.057049 [debug] [MainThread]: Command `dbt init` succeeded at 11:52:15.056875 after 0.16 seconds
+[0m11:52:15.057483 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D2A1C688A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D2A1CD5250>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D2A0AD1480>]}
+[0m11:52:15.057838 [debug] [MainThread]: Flushing usage events
+[0m11:52:15.285420 [debug] [MainThread]: An error was encountered while trying to flush usage events
