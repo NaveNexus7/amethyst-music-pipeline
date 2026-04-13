@@ -1,0 +1,8 @@
+node_modules/
+my_playlist.xlsx
+.env
+*.xlsx
+target/
+logs/
+.ipynb_checkpoints/
+__pycache__/
