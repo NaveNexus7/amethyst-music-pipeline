@@ -1,0 +1,28 @@
+# Amethyst Music Pipeline - Python Dependencies
+# Install with: pip install -r requirements.txt
+
+# Database
+psycopg2-binary>=2.9.0
+sqlalchemy>=2.0.0
+
+# Data processing
+pandas>=2.0.0
+openpyxl>=3.0.0
+
+# Spotify API
+spotipy>=2.23.0
+
+# YouTube API
+google-api-python-client>=2.0.0
+
+# Lyrics generation
+faster-whisper>=1.1.0
+
+# Indic language romanisation
+indic-transliteration>=2.3.60
+
+# dbt
+dbt-postgres>=1.7.0
+
+# Jupyter
+notebook>=7.0.0
