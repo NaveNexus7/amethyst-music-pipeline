@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta http-equiv="Content-Security-Policy" 
+      content="default-src 'self'; 
+               img-src 'self' https://i.scdn.co https://i.ytimg.com data:; 
+               media-src 'self' file:; 
+               script-src 'self' 'unsafe-eval'; 
+               style-src 'self' 'unsafe-inline';">
+  <title>Amethyst</title>
+  <link rel="stylesheet" href="./styles/main.css" />
+</head>
+<body>
+  <div class="window" role="application" aria-label="Amethyst Desktop Music Player">
+    <!-- ================= LEFT: PLAYER PANEL ================= -->
+    <section class="playerPanel" aria-label="Player Panel">
+
+      <!-- App Header -->
+      <div class="appHeader">
+        <h1 class="appTitle">Amethyst</h1>
+        <div class="appSubtitle">Offline • Local Music Player</div>
+      </div>
+
+      <!-- Now Playing Row (Album + Title side-by-side) -->
+<div class="nowPlayingRow" aria-label="Now Playing Row">
+
+  <div class="albumArtwork small" id="albumArtwork" aria-label="Album Artwork">
+    <img id="artworkImg" src="" alt="" style="
+        position:absolute;
+        inset:0;
+        width:100%;
+        height:100%;
+        object-fit:cover;
+        border-radius:14px;
+        display:none;
+        z-index:3;
+    "/>
+    <svg class="crystalIcon" id="artworkPlaceholder" width="56" height="56" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M12 2 4 9l8 13 8-13-8-7Z" stroke="rgba(167,139,250,0.6)" stroke-width="1.5" fill="rgba(167,139,250,0.25)"/>
+        <path d="M4 9h16" stroke="rgba(167,139,250,0.35)" stroke-width="1.2"/>
+        <path d="M12 2v20" stroke="rgba(167,139,250,0.22)" stroke-width="1.2"/>
+    </svg>
+    <div class="artGlow" aria-hidden="true"></div>
+</div>
+
+  <div class="trackInfo" aria-label="Now Playing">
+    <div class="trackTitle" id="nowTitle">—</div>
+    <div class="trackMeta" id="nowMeta">Pick a folder to begin</div>
+  </div>
+
+</div>
+
+      <!-- Visualizer -->
+      <div class="visualizer" id="visualizer" aria-label="Visualizer"></div>
+
+      <!-- Seek bar -->
+      <div class="seekWrap" aria-label="Seek Bar">
+        <input id="seekBar" class="seekBar" type="range" min="0" max="1000" value="0" aria-label="Seek" />
+        <div class="timeRow">
+          <span id="curTime">0:00</span>
+          <span id="durTime">0:00</span>
+        </div>
+      </div>
+
+      <!-- Playback Controls -->
+      <div class="playbackControls" aria-label="Playback Controls">
+        <button id="btnPrev" class="iconBtn" aria-label="Previous Track">
+          <span class="iconSlot" data-icon="skip-back"></span>
+        </button>
+
+        <button id="btnPlay" class="playBtn" aria-label="Play/Pause">
+          <span id="playIconSlot" class="iconSlot iconLg" data-icon="play"></span>
+        </button>
+
+        <button id="btnNext" class="iconBtn" aria-label="Next Track">
+          <span class="iconSlot" data-icon="skip-forward"></span>
+        </button>
+      </div>
+
+      <!-- Modes + Volume -->
+      <div class="modesVolRow" aria-label="Modes and Volume">
+        <div class="modes">
+          <button id="btnShuffle" class="modeBtn" aria-label="Shuffle">
+            <span class="iconSlot" data-icon="shuffle"></span>
+          </button>
+
+          <button id="btnRepeat" class="modeBtn" aria-label="Repeat">
+            <span id="repeatIconSlot" class="iconSlot" data-icon="repeat"></span>
+            <span id="repeatLabel" class="modeLabel">Off</span>
+          </button>
+        </div>
+
+        <div class="volumeControl" aria-label="Volume Control">
+          <span class="volIcon" aria-hidden="true">
+            <span id="volIconSlot" class="iconSlot" data-icon="volume-2"></span>
+          </span>
+          <input id="volBar" class="volBar" type="range" min="0" max="1" step="0.01" value="0.9" aria-label="Volume" />
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="footer">
+        <div class="footerPrimary">Local files only • Your music never leaves your device</div>
+        <div class="footerSecondary">Space: Play/Pause • ←→: Seek • ↑↓: Volume</div>
+      </div>
+
+      <audio id="audio" preload="metadata"></audio>
+    </section>
+
+    
+    <section class="lyricsRightPanel" aria-label="Lyrics">
+  <div class="lyricsRightHeader">
+    <h3>Lyrics</h3>
+    <span class="lyricsStatus" id="lyricsStatus">—</span>
+  </div>
+
+  <div class="lyricsRightBody" id="lyricsContent">
+    ♪ Select a song to load lyrics…
+  </div>
+</section>
+<!-- ================= RIGHT: LIBRARY PANEL ================= -->
+    <section class="libraryPanel" aria-label="Library Panel">
+      <div class="libraryHeader">
+        <h2 class="libraryTitle">Library</h2>
+        <div id="count" class="libraryCount">0 tracks</div>
+      </div>
+
+      <div class="searchSortRow">
+        <div class="searchBar">
+          <span class="searchIcon" aria-hidden="true">
+            <span class="iconSlot iconSm" data-icon="search"></span>
+          </span>
+          <input id="search" class="searchInput" placeholder="Search songs…" />
+        </div>
+
+        <div class="sortDropdown">
+          <select id="sort" class="sortSelect" aria-label="Sort">
+            <option value="added">Added</option>
+            <option value="name">Name</option>
+            <option value="folder">Folder</option>
+          </select>
+          <span class="sortChevron" aria-hidden="true">
+            <span class="iconSlot iconSm" data-icon="chevron-down"></span>
+          </span>
+        </div>
+
+        <button id="btnPick" class="pickBtn">Choose Folder</button>
+      </div>
+
+      <div id="trackList" class="trackList"></div>
+    </section>
+
+  </div>
+
+  <!-- Lucide UMD (local from node_modules) -->
+  <script src="./icons.js"></script>
+  <script src="./app.js"></script>
+
+</body>
+</html>

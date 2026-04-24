@@ -1,0 +1,5 @@
+# Amethyst pipeline requirements
+faster-whisper>=1.1.0
+
+# Optional (for Telugu/Devanagari -> Roman)
+indic-transliteration>=2.3.60

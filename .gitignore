@@ -1,0 +1,13 @@
+﻿player/node_modules/
+player/lyrics_review/
+player/ytdlp_cache/
+player/agent_memory.json
+amethyst_library/
+songs_input/
+*.mp3\
+*.mp3
+*.m4a
+*.wav
+*.pyc
+__pycache__/
+.env
